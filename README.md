@@ -80,9 +80,23 @@ classDiagram
     Pet --> Task
     Scheduler --> Task
 
+```
+
 ## Testing PawPal+
 
 Run the test suite with:
 
 ```bash
 python -m pytest
+```
+
+### Smarter Scheduling
+
+PawPal+ includes several intelligent scheduling features:
+
+- **Sorting:** Tasks are automatically sorted by time to create a clear daily plan.
+- **Filtering:** Tasks can be filtered by completion status or by pet.
+- **Recurring Tasks:** Daily and weekly tasks automatically generate the next occurrence when completed.
+- **Conflict Detection:** The system detects tasks scheduled at the same time and provides warnings.
+
+These features make the system more useful for real-world pet care management.
