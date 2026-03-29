@@ -79,3 +79,10 @@ classDiagram
     Owner --> Pet
     Pet --> Task
     Scheduler --> Task
+
+## Testing PawPal+
+
+Run the test suite with:
+
+```bash
+python -m pytest
