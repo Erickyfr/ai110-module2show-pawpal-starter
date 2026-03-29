@@ -24,6 +24,14 @@ I designed the system this way to separate data (Owner, Pet, Task) from logic (S
 - Did your design change during implementation?
 - If yes, describe at least one change and why you made it.
 
+I kept the design simple by using four main classes: Owner, Pet, Task, and Scheduler. One design decision I made was to separate the scheduling logic into the Scheduler class instead of placing it inside the Pet or Task classes. This helps keep responsibilities clear and makes the system easier to test and maintain.
+
+I also ensured that Task includes important attributes like duration and priority, since these are required for generating a daily plan.
+
+During implementation, I refined how tasks are associated with pets by adding a pet_name attribute to the Task class. This made it easier to display which pet each task belongs to when generating the schedule.
+
+I also adjusted the Scheduler to sort tasks by time and return them in a way that makes them easier to display in both the CLI and future UI.
+
 ---
 
 ## 2. Scheduling Logic and Tradeoffs
@@ -33,10 +41,14 @@ I designed the system this way to separate data (Owner, Pet, Task) from logic (S
 - What constraints does your scheduler consider (for example: time, priority, preferences)?
 - How did you decide which constraints mattered most?
 
+The scheduler currently considers time as the main constraint by sorting tasks based on their scheduled time. Tasks are organized in chronological order to create a clear daily plan.
+
 ### b. Tradeoffs
 
 - Describe one tradeoff your scheduler makes.
 - Why is that tradeoff reasonable for this scenario?
+
+One tradeoff is that the scheduler does not prioritize tasks beyond time ordering. This means more important tasks are not treated differently from less important ones. This is reasonable for now because the goal is to create a simple and readable daily schedule before adding more complex logic.
 
 ---
 
